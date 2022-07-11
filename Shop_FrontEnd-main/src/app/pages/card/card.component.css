@@ -2,3 +2,54 @@
     color :palevioletred;
     cursor : pointer;
 }
+.b{
+    font-weight: 700;
+    color: green;
+    font-size: 80px;
+    font-family: serif;
+    font-style:italic;
+  }
+  .c{
+  color: red;
+  
+  }
+  .g{
+    font-size: 18px;
+  }
+  .d{
+    font-family:serif;
+    color:blue;
+  }
+  .block{
+    height: 100%;
+    width: 50%;
+  }
+  .img-block
+  {
+    
+  }
+  .marquee-container{
+      align-items: center;
+      overflow: hidden;
+  }
+  .marquee{
+    
+    z-index: 10;
+    position:relative;
+    width:60vw;
+    font-size: 50px;
+      font-family: sans-serif;
+      color: red;
+      white-space: nowrap;
+      animation-name: myanim;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes myanim{
+    0% {
+        color: rgb(200, 0, 0); left: 0%; }
+    50% {
+        color: rgb(0, 0, 200); left: 40%; }
+    100% {
+        color: rgb(243, 210, 26); left: 0%;}
+  }

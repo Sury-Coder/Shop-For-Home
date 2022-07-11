@@ -1,34 +1,13 @@
 <style>
-.b{
-  font-weight: 700;
-  color: green;
-  font-size: 80px;
-  font-family: serif;
-  font-style:italic;
-}
-.c{
-color: red;
 
-}
-.g{
-  font-size: 18px;
-}
-.d{
-  font-family:serif;
-  color:blue;
-}
-.block{
-  height: 100%;
-  width: 50%;
-}
-.img-block
-{
-  
-}
 </style>
 
 <div>
-<h1 align="center" class="display-4 mb-5 b"> Hurrah! Shop here</h1>
+  <div class="marquee-container">
+    <h1 align="center" class="display-4 mb-5 b marquee"> Shop here For Home</h1>
+    
+</div>
+
 
 
 <input type = "text" align="left" name="search" [(ngModel)]="searchText" placeholder ="Search here" class="display-4 mb-5" />
@@ -36,7 +15,7 @@ color: red;
 <div class="row card-deck text-center">
  
 
-  <div *ngFor="let productInfo of page?.content | filter:searchText" class="col-lg-4 ">
+  <div *ngFor="let productInfo of page?.content | filter:searchText" class="col-sm-4 ">
     <div class="card mb-4 block"  >
       <img height="50%" class="card-img-top img-block" src="{{productInfo.productIcon}}" alt="{{productInfo.productName}}">
       <div class="card-body">
