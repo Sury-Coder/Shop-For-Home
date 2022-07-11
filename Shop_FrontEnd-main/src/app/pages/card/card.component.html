@@ -1,0 +1,59 @@
+<style>
+.b{
+  font-weight: 700;
+  color: green;
+  font-size: 80px;
+  font-family: serif;
+  font-style:italic;
+}
+.c{
+color: red;
+
+}
+.g{
+  font-size: 18px;
+}
+.d{
+  font-family:serif;
+  color:blue;
+}
+.block{
+  height: 100%;
+  width: 50%;
+}
+.img-block
+{
+  
+}
+</style>
+
+<div>
+<h1 align="center" class="display-4 mb-5 b"> Hurrah! Shop here</h1>
+
+
+<input type = "text" align="left" name="search" [(ngModel)]="searchText" placeholder ="Search here" class="display-4 mb-5" />
+</div>
+<div class="row card-deck text-center">
+ 
+
+  <div *ngFor="let productInfo of page?.content | filter:searchText" class="col-lg-4 ">
+    <div class="card mb-4 block"  >
+      <img height="50%" class="card-img-top img-block" src="{{productInfo.productIcon}}" alt="{{productInfo.productName}}">
+      <div class="card-body">
+        <h4 class="card-title ">{{productInfo.productName}}</h4>
+        
+        <div class="text-left">
+          
+          <p class="card-text g"><strong class="d">Price: </strong>{{productInfo.productPrice | currency}}</p>
+          <p class="card-text g " ><strong class="c">current Stock: </strong>{{productInfo.productStock}}</p>
+        </div>
+        <br>
+        <a routerLink="/product/{{productInfo.productId}}" *ngIf="productInfo.productStatus == 0; else offBlock"
+           class="btn btn-success btn-lg "
+        ><i class='fas fa-shopping-cart' ></i>  Buy now</a>
+        <ng-template #offBlock><a class="btn btn-secondary btn-lg disabled">Unavailable</a></ng-template>
+      </div>
+    </div>
+  </div>
+</div>
+<app-pagination  [currentPage]="page" ></app-pagination>
