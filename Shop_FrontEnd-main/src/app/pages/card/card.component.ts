@@ -14,6 +14,7 @@ import { CartService } from 'src/app/services/cart.service';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
+
 export class CardComponent implements OnInit, OnDestroy {
 
 
@@ -61,7 +62,7 @@ export class CardComponent implements OnInit, OnDestroy {
       this.getProds();
     }
   }
-  getProds(page: number = 1, size: number = 3) {
+  getProds(page: number = 1, size: number = 6) {
     if (this.route.snapshot.url.length == 1) {
       this.productService.getAllInPage(+page, +size)
         .subscribe(page => {

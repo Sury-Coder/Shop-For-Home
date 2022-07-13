@@ -22,11 +22,13 @@
   }
   .block{
     height: 100%;
-    width: 50%;
+    width: 80%;
+    padding: 2%;
+    margin-bottom: 2%;
   }
   .img-block
   {
-    
+    height: 90%;
   }
   .marquee-container{
       align-items: center;
